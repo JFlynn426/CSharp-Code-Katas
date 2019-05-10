@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
@@ -32,24 +33,6 @@ namespace CSharp_Code_Katas
                 return listOfInts.ToArray();
             }
         }
-        public class KataTests
-        {
-            [Test]
-            public void BasicTests()
-            {
-                var input = new int[] { 4, 3, 9, 7, 2, 1 };
-                var expected = new int[] { 2, 9, 3, 49, 4, 1 };
-                Assert.AreEqual(string.Join(",", expected), string.Join(",", Kata.SquareOrSquareRoot(input)));
-
-                input = new int[] { 100, 101, 5, 5, 1, 1 };
-                expected = new int[] { 10, 10201, 25, 25, 1, 1 };
-                Assert.AreEqual(string.Join(",", expected), string.Join(",", Kata.SquareOrSquareRoot(input)));
-
-                input = new int[] { 1, 2, 3, 4, 5, 6 };
-                expected = new int[] { 1, 4, 9, 2, 25, 36 };
-                Assert.AreEqual(string.Join(",", expected), string.Join(",", Kata.SquareOrSquareRoot(input)));
-            }
-        }
         public class NthSeries
         {
 
@@ -70,22 +53,14 @@ namespace CSharp_Code_Katas
                 return sum.ToString("F");
             }
         }
-        [TestFixture]
-        public class NthSeriesTests
+        public static class Kata1
         {
-
-            [Test]
-            public void Test1()
+            public static int СenturyFromYear(int year)
             {
-                Assert.AreEqual("0.00", NthSeries.seriesSum(0));
+                return Convert.ToInt32(Math.Ceiling(Convert.ToDouble(year) / 100));
             }
-            [Test]
-            public void Test2()
-            {
-                Assert.AreEqual("1.77", NthSeries.seriesSum(9));
-            }
-
         }
-
+        
     }
+
 }
