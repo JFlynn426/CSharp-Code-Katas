@@ -50,5 +50,42 @@ namespace CSharp_Code_Katas
                 Assert.AreEqual(string.Join(",", expected), string.Join(",", Kata.SquareOrSquareRoot(input)));
             }
         }
+        public class NthSeries
+        {
+
+            public static string seriesSum(int n)
+            {
+                double sum = 0;
+                if (n == 0)
+                {
+                    return "0.00";
+                }
+                else
+                {
+                    for (double i = 1; i <= n * 3; i += 3)
+                    {
+                        sum += 1 / i;
+                    }
+                }
+                return sum.ToString("F");
+            }
+        }
+        [TestFixture]
+        public class NthSeriesTests
+        {
+
+            [Test]
+            public void Test1()
+            {
+                Assert.AreEqual("0.00", NthSeries.seriesSum(0));
+            }
+            [Test]
+            public void Test2()
+            {
+                Assert.AreEqual("1.77", NthSeries.seriesSum(9));
+            }
+
+        }
+
     }
 }
