@@ -60,7 +60,49 @@ namespace CSharp_Code_Katas
                 return Convert.ToInt32(Math.Ceiling(Convert.ToDouble(year) / 100));
             }
         }
-        
+        public static class Kata3
+        {
+            public static int ArrayPlusArray(int[] arr1, int[] arr2)
+            {
+                return arr1.Sum() + arr2.Sum();
+            }
+        }
+        class Kata4
+        {
+            public static string WorkNeeded(int projectMinutes, int[][] freelancers)
+            {
+                var freelancerTime = 0;
+                for (int i = 0; i < freelancers.Length; i++)
+                {
+                    freelancerTime += freelancers[i][0] * 60;
+                    freelancerTime += freelancers[i][1];
+                }
+                var myTime = projectMinutes - freelancerTime;
+                if (myTime > 0)
+                {
+                    return $"I need to work {myTime / 60} hour(s) and {myTime % 60} minute(s)";
+                }
+                else
+                {
+                    return "Easy Money!";
+                }
+            }
+        }
+        public class Kata5
+        {
+            public static string Remove(string s, int n)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    if (s.IndexOf("!") != -1)
+                    {
+                        s = s.Remove(s.IndexOf("!"), 1);
+                    }
+                }
+
+                return s;
+            }
+        }
     }
 
-}
+    }
