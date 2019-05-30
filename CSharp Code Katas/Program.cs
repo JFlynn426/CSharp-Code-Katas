@@ -114,5 +114,21 @@ namespace CSharp_Code_Katas
                     return false;
             }
         }
+        public class Evaporator
+        {
+
+            public static int evaporator(double content, double evap_per_day, double threshold)
+            {
+                double remaining = 100;
+                int days = 0;
+                while (remaining > threshold)
+                {
+                    remaining = remaining - remaining * evap_per_day / 100;
+                    days++;
+                }
+                return days;
+                
+            }
+        }
     }
 }
