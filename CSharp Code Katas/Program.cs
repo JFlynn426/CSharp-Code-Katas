@@ -130,5 +130,19 @@ namespace CSharp_Code_Katas
                 
             }
         }
+        class Arge
+        {
+
+            public static int NbYear(int p0, double percent, int aug, int p)
+            {
+                int answer = 0;
+                for (int n = 1; p0 < p; n++)
+                {
+                    p0 = Convert.ToInt32(Math.Floor(p0 + p0 * percent / 100 + aug));
+                    answer = n;
+                }
+                return answer;
+            }
+        }
     }
 }
