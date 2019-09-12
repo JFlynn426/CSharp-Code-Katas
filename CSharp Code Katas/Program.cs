@@ -127,7 +127,7 @@ namespace CSharp_Code_Katas
                     days++;
                 }
                 return days;
-                
+
             }
         }
         class Arge
@@ -142,6 +142,23 @@ namespace CSharp_Code_Katas
                     answer = n;
                 }
                 return answer;
+            }
+        }
+        public class Kata9
+        {
+            public static int FindMissing(List<int> list)
+            {
+                var answer = 0;
+                var differences = new List<int>() { list[2] - list[1], list[1] - list[0] };
+                for (int x = 0; x < list.Count - 1; x++)
+                {
+                    if (list[x] + differences.Min() != list[x + 1])
+                    {
+                        answer = list[x] + differences.Min();
+                    }
+                }
+                return answer;
+
             }
         }
     }
