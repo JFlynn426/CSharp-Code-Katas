@@ -177,5 +177,25 @@ namespace CSharp_Code_Katas
                 return copy.SequenceEqual(b);
             }
         }
+        public class Consecutives
+        {
+            public static List<int> SumConsecutives(List<int> s)
+            {
+                List<int> answer = new List<int>();
+                int last = s[0], sum = 0;
+                foreach (int i in s)
+                {
+                    if (i == last) sum += last;
+                    else
+                    {
+                        answer.Add(sum);
+                        sum = last = i;
+                    }
+                }
+                answer.Add(sum);
+                return answer;
+            }
+
+        }
     }
 }
