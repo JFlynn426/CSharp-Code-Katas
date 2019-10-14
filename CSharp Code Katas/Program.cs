@@ -209,5 +209,25 @@ namespace CSharp_Code_Katas
                 return new int[0];
             }
         }
+        public class Kata8
+        {
+            public static string SortTheInnerContent(string words)
+            {
+                string[] diffWords = words.Split(' ');
+                StringBuilder sb = new StringBuilder();
+                foreach (var word in diffWords)
+                {
+                    char[] wordChars = word.ToCharArray();
+                    if (wordChars.Length == 1) sb.Append(new string(wordChars) + ' ');
+                    else
+                    {
+                        Array.Sort(wordChars, 1, (wordChars.Length - 2));
+                        Array.Reverse(wordChars, 1, (wordChars.Length - 2));
+                        sb.Append(new string(wordChars) + ' ');
+                    }
+                }
+                return sb.ToString().Trim();
+            }
+        }
     }
 }
