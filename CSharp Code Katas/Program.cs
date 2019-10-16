@@ -229,5 +229,25 @@ namespace CSharp_Code_Katas
                 return sb.ToString().Trim();
             }
         }
+        public class Kata10
+        {
+            public static bool IsIsogram(string str)
+            {
+                bool answer = true;
+                string Str = str.ToLower();
+                for (int i = 0; i < Str.Length - 2; i++)
+                {
+                    for (int j = 1; j < Str.Length - i; j++)
+                    {
+                        if (Str[i] == Str[i + j])
+                        {
+                            answer = false;
+                        }
+                    }
+                }
+                return answer;
+            }
+
+        }
     }
 }
