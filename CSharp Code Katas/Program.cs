@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using NUnit.Framework;
 
 //KATA #1
@@ -248,6 +249,13 @@ namespace CSharp_Code_Katas
                 return answer;
             }
 
+        }
+        public class Kata11
+        {
+            public static string ToCamelCase(string str)
+            {
+                return Regex.Replace(str, @"[_-](\w)", letter => letter.Groups[1].Value.ToUpper());
+            }
         }
     }
 }
