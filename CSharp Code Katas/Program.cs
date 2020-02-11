@@ -257,5 +257,25 @@ namespace CSharp_Code_Katas
                 return Regex.Replace(str, @"[_-](\w)", letter => letter.Groups[1].Value.ToUpper());
             }
         }
+
+        public class Kata12
+        {
+            public static IEnumerable<string> OpenOrSenior(int[][] data)
+            {
+                var category = new List<string>();
+                foreach (int[] member in data)
+                {
+                    if (member[0] >= 55 && member[1] > 7)
+                    {
+                        category.Add("Senior");
+                    }
+                    else
+                    {
+                        category.Add("Open");
+                    }
+                }
+                return category;
+            }
+        }
     }
 }
